@@ -1,5 +1,8 @@
 from flask import Flask
 
+
+# Classe que instancia a aplicação e o banco de dados
+
 class Server():
     def __init__(self):
         self.app = Flask(__name__)
