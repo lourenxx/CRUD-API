@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from models import DiscordMembers
 from app import app
 
+#Endpoint da aplicação
 
 # GET ALL
 

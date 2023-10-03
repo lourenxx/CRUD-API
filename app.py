@@ -1,6 +1,7 @@
 from db import db
 from instance.instace import server
 
+# Função que cria as tabelas do banco e roda a aplicação
 
 app = server.app
 
