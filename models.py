@@ -3,6 +3,9 @@ from db import db
 # Classe que cria o modelo das tabelas do banco
 
 class DiscordMembers(db.Model):
+
+    __tablename__ = 'members'
+
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False, unique=False)
     nickname = db.Column(db.String(80), nullable=False, unique=True)
