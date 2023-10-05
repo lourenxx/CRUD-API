@@ -1,5 +1,6 @@
 from db import db
-from instance.instace import server
+from instance.instance import server
+from models import DiscordMembers
 
 # Função que cria as tabelas do banco e roda a aplicação
 
@@ -12,5 +13,6 @@ def create_tables():
 
 if __name__ == '__main__':
     db.init_app(app)
+    create_tables()
     server.run()
 
