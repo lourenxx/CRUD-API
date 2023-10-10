@@ -15,6 +15,8 @@ def get_members():
     except Exception as e:
         return jsonify({'message': 'Erro ao buscar membros'}), 500
     
+
+# Rota pra criar os membros  
 @members_blueprint.route('members', methods=["POST"])
 def post_member():
     try:
