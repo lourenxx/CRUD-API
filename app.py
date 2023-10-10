@@ -1,18 +1,24 @@
+from flask import Flask
 from db import db
-from instance.instance import server
-from models import DiscordMembers
+from routes import members_blueprint
 
-# Função que cria as tabelas do banco e roda a aplicação
 
-app = server.app
 
-def create_tables():
-    with app.app_context():
-        db.create_all()
+app = Flask(__name__)
+
+
+# Configuração do banco de dados
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///discord.db'  # Substitua pelo URI do seu banco de dados
+
+# Inicialização do SQLAlchemy
+db.init_app(app)
+
+# Registre o blueprint
+app.register_blueprint(members_blueprint, url_prefix='/')
 
 
 if __name__ == '__main__':
-    db.init_app(app)
-    create_tables()
-    server.run()
-
+    with app.app_context():
+        db.create_all()
+    app.run(debug=True)
