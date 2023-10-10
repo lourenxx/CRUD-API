@@ -25,4 +25,3 @@ class DiscordMembers(db.Model):
             'nickname': self.nickname,
             'age': self.age
         }
-
