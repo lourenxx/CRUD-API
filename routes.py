@@ -62,5 +62,27 @@ def uptade_member(id):
             return jsonify({'message': 'Erro ao atualizar membro'}), 500
             
 
+# Rota para deletar membros
+@members_blueprint.route('/delete/<int:id>', methods=['DELETE'])
+def delete_member(id):
+     
+     try:
+        member = DiscordMembers.query.get(id)
+
+        if member:
+            db.session.delete(member)
+            db.session.commit()
+            return jsonify({'message' : f' Membro excluido {member} com sucesso'}), 204
+        else:
+            return jsonify({'message' : f' Membro não encontrado'}), 404
+        
+     except Exception as e:
+         return jsonify({'message' : 'Erro ao excluir membro'}), 500
+
+
+            
+
+
+
 
 
