@@ -3,17 +3,28 @@ from models import DiscordMembers
 from db import db
 
 
-members_blueprint = Blueprint('members', __name__)
+members_blueprint = Blueprint('members', __name__)  
 
 # Rota para listar todos os membros
 @members_blueprint.route('/members', methods=['GET'])
-def get_members():
+def get_member():
     try:
         members = DiscordMembers.query.all()
         member_list = [member.json() for member in members]
         return jsonify({'members': member_list}), 200
     except Exception as e:
         return jsonify({'message': 'Erro ao buscar membros'}), 500
+    
+
+# Rota para listar membros por id 
+@members_blueprint.route('/members/<id>', methods=['GET'])
+def get_member_by_id(id):
+    try:
+        member_id = DiscordMembers.query.filter_by(id=id).first()
+        member_id_list = member_id.json()
+        return jsonify({'member': member_id_list}), 200
+    except Exception as e:
+        return jsonify({'message': 'Erro ao buscar membro por id'}), 500
     
 
 # Rota pra criar os membros  
