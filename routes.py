@@ -38,3 +38,29 @@ def post_member():
         return jsonify({'message': 'Membro criado com sucesso', 'member': new_member.json()}), 201
     except Exception as e:
         return jsonify({'message': 'Erro ao criar membro'}), 500
+    
+
+# Rota para atualizar membros
+@members_blueprint.route('/update/<int:id>', methods=['PUT'])
+def uptade_member(id):
+    try:
+        data = request.get_json()
+        member = DiscordMembers.query.get(id)
+
+        if member:
+            member.name = data.get('name', member.name)
+            member.nickname = data.get('nickname', member.nickname)
+            member.age = data.get('age', member.age)
+
+            db.session.commit()
+
+            return jsonify({'message': 'Membro atualizado com sucesso', 'member': member.json()}), 200
+        else:
+                return jsonify({'message': 'Membro não encontrado'}), 404
+        
+    except Exception as e:
+            return jsonify({'message': 'Erro ao atualizar membro'}), 500
+            
+
+
+
