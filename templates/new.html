@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <title>Discord Members</title>
+</head>
+<body>
+    <center><h1>New Member</h1></center>
+    
+    <form action="{{url_for('members.post_member')}}" method="post">
+      
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        
+        <br>
+
+        <label for="nickname">NickName:</label>
+        <input type="text" id="nickname" name="nickname" required>
+
+        <br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+
+
+        <br>
+
+        <input type="submit" value="submit">
+        <a href="{{url_for('members.get_member')}}">back</a>
+    </form>
+    
+    <script type="text/javascript" src="/static/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/jquery-3.7.1.min.js"></script>
+    
+</body>
+</html>
