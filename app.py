@@ -5,6 +5,7 @@ from routes import members_blueprint
 
 
 app = Flask(__name__)
+app.secret_key = "XXXXX"
 
 
 # Configuração do banco de dados
