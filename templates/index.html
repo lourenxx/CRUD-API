@@ -9,14 +9,14 @@
     <body>
         <form action="{{url_for('members.get_member')}}" method="get">
            <a class="btn btn-primary" href="{{url_for('members.post_member')}}">NEW MEMBER</a>
-            <center><h1>Migus' Members</h1></center>
+            <center><h1>Members</h1></center>
 
                 <div class="container">
                     <table class="table table-striped table-hover">
                         <tr>
-                            <td>Nome</td>
+                            <td>Name</td>
                             <td>Nickname</td>
-                            <td>Idade</td>
+                            <td>Age</td>
                         </tr>
                 
                         {% for member in members %}
