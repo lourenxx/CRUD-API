@@ -6,7 +6,7 @@ This is a basic Flask CRUD API that I made to study the API's concepts. This pro
 
 You can clone this repo and run it in two different aways if you preffer: In your local machine or in a container.
 
-FOR THE BOTH AWAYS YOU NEED TO HAVE PIP INSTALLED IN YOU MACHINE!!!
+> FOR THE BOTH AWAYS YOU NEED TO HAVE PIP INSTALLED IN YOU MACHINE!!!
 
 
 # RUN LOCAL
