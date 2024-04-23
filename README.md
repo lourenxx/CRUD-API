@@ -33,13 +33,14 @@ cd source/
 pip install requirements.txt
 ```
 
-# RUN WITH DOCKER CONTAINER
+# RUN WITH DOCKER IMAGE
 
 For run the api using Docker, you need to have it installed in your local machine, with in installed, follow this steps:
 
-1- Access the api image on DockerHub and write the "docker pull" command to clone the image in you computer 
+1- Access the api image on DockerHub and write the "docker pull" command to clone the image in your computer. 
 
-    DockerHub image: https://hub.docker.com/repository/docker/lourenxx/flask-api-image/tags
+DockerHub image: 
+https://hub.docker.com/repository/docker/lourenxx/flask-api-image/tags
 
 ```
 docker pull lourenxx/flask-api-image:v1.0
