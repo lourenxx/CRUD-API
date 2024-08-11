@@ -2,15 +2,15 @@
 
 > PROJECT STATUS: Concluded 
 
-This is a basic Flask CRUD API that I made to study the API's concepts. This project uses Python, Flask SQLite and Docker.
+This is a basic Flask CRUD API that I made to study API concepts. This project uses Python, Flask, SQLite, and Docker.
 
-You can clone this repo and run it in two different aways if you preffer: In your local machine or in a container.
+You can clone this repo and run it in two different ways if you prefer: on your local machine or in a container.
 
-> FOR THE BOTH AWAYS YOU NEED TO HAVE PIP INSTALLED IN YOU MACHINE!!!
+> FOR BOTH WAYS, YOU NEED TO HAVE PIP INSTALLED ON YOUR MACHINE!!!
 
 
-# RUN LOCAL
-To run the api in your local machine, is advisible that you create a Virtual Environment and put all the archives in it, after that you download the "source/requirement.txt".
+# RUN LOCALLY
+To run the API on your local machine, it is advisable to create a Virtual Environment and place all the files in it. After that, download the "source/requirements.txt".
 
 
 On Linux:
@@ -35,18 +35,18 @@ pip install requirements.txt
 
 # RUN WITH DOCKER IMAGE
 
-For run the api using Docker, you need to have it installed in your local machine, with in installed, follow this steps:
+To run the API using Docker, you need to have Docker installed on your local machine. Once installed, follow these steps:
 
-1- Access the api image on DockerHub and write the "docker pull" command to clone the image in your computer. 
+1- Access the API image on DockerHub and use the "docker pull" command to clone the image to your computer.
 
-DockerHub image: 
+DockerHub image:
 https://hub.docker.com/repository/docker/lourenxx/flask-api-image/tags
 
 ```
 docker pull lourenxx/flask-api-image:v1.0
 ```
 
-2- After clone you image, you need to run the container:
+2-  After cloning the image, you need to run the container:
 
 ```
 docker run -p 5000:5000 lourenxx/flask-api-image:v1.0
